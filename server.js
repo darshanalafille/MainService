@@ -29,6 +29,8 @@ app.use(cors());
 app.get('/', (req, res) => {
   //res.send('Hello World : ' + xxx);
   
+  res.json(results);
+  /*
   axious.get('http://localhost:8081').
     then(resp => {		
 		
@@ -41,7 +43,7 @@ app.get('/', (req, res) => {
         });
       
     });
-	
+	*/
 	
 });
 
