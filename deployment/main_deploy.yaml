@@ -1,7 +1,9 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mainservice-gke
+  labels:
+    app:mainservice
 spec:
   replicas: 2
   selector:
@@ -13,7 +15,7 @@ spec:
         app: mainservice
     spec:
       containers:
-      - name: hello-app
+      - name: mainservice
         # Replace $GCLOUD_PROJECT with your project ID
         image: gcr.io/directfn/mainservice-gke:latest
         # This app listens on port 8080 for web traffic by default.
