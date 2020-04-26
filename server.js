@@ -36,12 +36,12 @@ app.get('/', (req, res) => {
 		
       console.log(resp.data);
       results.auth = resp.data;
-	  res.json(results);
-      //axious.get("http://localhost:8082").
-      // then(r => {
-       //   results.items = r.data;
-       //   res.json(results);
-       // });
+	  
+      axious.get("http://dataservice").
+       then(r => {
+         results.items = r.data;
+          res.json(results);
+        });
       
     });
 	
